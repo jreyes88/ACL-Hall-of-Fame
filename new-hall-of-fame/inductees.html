@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="http://acltv.com/wp-content/themes/austincitylimits/favicon.ico">
+  <title>Austin City Limits Hall of Fame</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="z-depth-0" role="navigation">
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <!-- Full-size Desktop Navigation -->
+      <ul class="left hide-on-med-and-down">
+        <li>
+          <a id="logo-container" href="index.html">
+            <img src="images/ACL-HOF-Black.png" alt="ACL Hall of Fame Logo" class="aclLogo"/>
+          </a>
+        </li>
+        <li><a href="index.html">ABOUT</a></li>
+        <li class="active"><a href="inductees.html">INDUCTEES</a></li>
+        <li><a href="previous-ceremonies.html">PREVIOUS CEREMONIES</a></li>
+        <li><a href="http://shop.acltv.com/store" target="_blank">SHOP</a></li>
+      </ul>
+
+      <!-- Mobile Navigation -->
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+        <li><a href="index.html">About</a></li>
+        <li><a href="inductees.html">Inductees</a></li>
+        <li><a href="previous-ceremonies.html">Previous Ceremonies</a></li>
+        <li><a href="http://shop.acltv.com/store" target="_blank">Shop</a></li>
+      </ul>
+      <a class="brand-logo center hide-on-large-only" id="logo-container" href="index.html">
+        <img src="images/ACL-HOF-Black.png" alt="ACL Hall of Fame Logo" class="aclLogo" />
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="container">
+    <div class="row pageHeader" id="inducteesHeader">
+      <div class="col s9 m9 l9">
+        <h1>Hall of Fame Inductees</h1>
+      </div>
+      <div class="col s6 m3 l3" id="sortButtons">
+        <div id="buttonRightFloat">
+          <a class="btn-floating btn waves-effect waves-light active" id="alphaSort"><i class="material-icons">sort_by_alpha</i></a>
+          <a class="btn-floating btn waves-effect waves-light inactive" id="yearSort"><i class="material-icons">schedule</i></a>
+        </div>
+      </div>
+      <div id="#clearfix"></div>
+    </div>
+    
+    <!-- Inductees -->
+    <div id="inductees">
+      <div class="inductee-list-container list-group"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 m4 s12">
+          <div id="footerLeftColumnWrapper">
+            <ul class="center" id="footerMenu">
+              <li><a href="http://www.klru.org/" target="_blank">About KLRU</a></li>
+              <li><a href="http://acltv.com/" target="_blank">Austin City Limits</a></li>
+              <li><a href="http://www.klru.org/donate/" target="_blank">Support</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col l4 m4 s12" id="footerCenterColumnWrapper">
+          <a href="http://www.klru.org/" target="_blank"><img src="images/KLRU_logo_K.png" alt="KLRU Logo" id="klruLogo" /></a>
+          <p class="center-align">
+            <span class="newLine">Austin City Limits is a production of </span>
+            <span class="newLine">KLRU-TV, Austin PBS</span>
+          </p>
+        </div>
+        <div class="col l4 m4 s12">
+          <div class="center" id="footerRightColumnWrapper">
+            <a href="https://www.facebook.com/austincitylimitstv/" target="_blank"><img src="images/SocialMedia/facebook-icon.png" alt="Facebook Icon" class="footerSocialMedia"/></a>
+            <a href="https://twitter.com/acltv" target="_blank"><img src="images/SocialMedia/twitter-icon.png" alt="Twitter Icon" class="footerSocialMedia" /></a>
+            <a href="https://www.instagram.com/acltv/" target="_blank"><img src="images/SocialMedia/instagram-icon.png" alt="Instagram Icon" class="footerSocialMedia" /></a>
+            <a href="http://www.snapchat.com/add/acltv" target="_blank"><img src="images/SocialMedia/snapchat-icon.png" alt="Snapchat Icon" class="footerSocialMedia" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Alphabetical Sort -->
+  <script id="inductee-template-by-name" type="text/x-handlebars-template">
+    <div class="row">
+      {{#compareAlphabetically inductees}}
+      <a href="inductee-details.html?id={{index}}">
+        <div class="col s12 m12 l6 inductee">
+          <img src="images/Inductees/{{shortCode}}/default.jpg" alt="{{name}}" class="inducteeImage" />
+          <h5>{{name}}</h5>
+          <h6>Year Inducted: {{#makeItalicized}}{{inductionYear}}{{/makeItalicized}}</h6>
+        </div>
+      {{/compareAlphabetically}}
+      </a>
+    </div>
+  </script>
+
+  <!-- Year Sort -->
+  <script id="inductee-template-by-year" type="text/x-handlebars-template">
+    <div class="row">
+      <h2>2016 Inductees</h2>
+      {{#each inductees}}
+        {{#compare inductionYear 2016 operator="=="}}
+          <a href="inductee-details.html?id={{index}}">
+            <div class="col s12 m12 l6 inductee">
+              <img src="images/Inductees/{{shortCode}}/default.jpg" alt="{{name}}" class="inducteeImage" />
+              <h5>{{name}}</h5>
+            </div>
+          </a>
+        {{/compare}}
+      {{/each}}
+    </div>
+    <div class="row">
+      <h2>2015 Inductees</h2>
+      {{#each inductees}}
+        {{#compare inductionYear 2015 operator="=="}}
+          <a href="inductee-details.html?id={{index}}">
+            <div class="col s12 m12 l6 inductee">
+              <img src="images/Inductees/{{shortCode}}/default.jpg" alt="{{name}}" class="inducteeImage" />
+              <h5>{{name}}</h5>
+            </div>
+          </a>
+        {{/compare}}
+      {{/each}}
+    </div>
+    <div class="row">
+      <h2>2014 Inductees</h2>
+      {{#each inductees}}
+        {{#compare inductionYear 2014 operator="=="}}
+          <a href="inductee-details.html?id={{index}}">
+            <div class="col s12 m12 l6 inductee">
+              <img src="images/Inductees/{{shortCode}}/default.jpg" alt="{{name}}" class="inducteeImage" />
+              <h5>{{name}}</h5>
+            </div>
+          </a>
+        {{/compare}}
+      {{/each}}
+    </div>
+  </script>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

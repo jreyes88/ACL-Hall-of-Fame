@@ -1,0 +1,469 @@
+/* General Styles */
+body {
+  background: url(../images/sxswbg.jpg) repeat-x #3C0056;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #3c0057;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  display: block;
+  margin: 5px auto -5px auto; 
+}
+
+/* Lone Star Emmy Banner */
+.lonestar-emmy-banner {
+  border-bottom: 1px solid black;
+  background-color: #000;
+  margin: 0px auto;
+  max-width: 1531px;
+  width: 100%;
+  display: block;
+  visibility: visible;
+}
+
+#lonestarEmmyBannerImage {
+  vertical-align: bottom;
+  width: 100%;
+}
+
+#smallLonestarEmmyBannerImage {
+  display: none;
+  visibility: hidden;
+}
+
+/* Show Title Banner */
+#header {
+  background: url(../images/SXSWbricktile.jpg);
+  height: 150px;
+  display: block;
+}
+
+#header img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+/* Current Episode Video */
+.intrinsic-container {
+  background-color: #000;
+  position: relative;
+  width: 80%;
+  height: 0;
+  padding-bottom: 39%;
+  display: block;
+  margin: 0 auto;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+iframe {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Previous Episodes */
+.showsRow {
+  width: 820px;
+  display: block;
+  margin: 0 auto;
+}
+
+.rowDivider {
+  width: 100%;
+}
+
+#clips {
+  background-color: #000;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.clip {
+  min-height: 165px;
+  margin: 10px;
+  display: inline-block;
+  color: #e9db7a;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.clip img {
+  height: 140px;
+  width: 250px;
+  display: block;
+}
+
+.clip a, .clip a:visited, .clip a:hover {
+  color: #e9db7a;
+}
+
+/* Footer */
+#footer {
+  background-color: #fff;
+  width: 80%;
+  height: 114px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+#desc {
+  margin: 0;
+  padding: 25px;
+  width: 350px;
+  border-right: 2px solid black;
+  float: left;
+}
+
+#logos {
+  float: right;
+  padding: 25px 25px 0 0;
+}
+
+/* Media Queries :( */
+
+/* big landscape tablets, laptops, and desktops */
+@media only screen and (min-width:1025px) and (max-width:1281px) {
+  /* Current Episode Video */
+  .intrinsic-container {
+    padding-bottom: 45%;
+    vertical-align: bottom;
+  }
+
+  /* Previous Episodes */
+  .rowDivider {
+    margin-bottom: 10px
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media only screen and (min-width:961px) and (max-width:1025px) {
+  /* Current Episode Video */
+  .intrinsic-container {
+    padding-bottom: 46%;
+    vertical-align: bottom;
+  }
+
+  /* Previous Episodes */
+  .showsRow:first-of-type {
+    width: 400px;
+    height: 496px;
+  }
+
+  .showsRow {
+    width: 400px;
+    height: 744px;
+  }
+
+  #clips {
+    height: 1242px;
+  }
+
+  #newestEpisodeDisappear {
+    display: none;
+  }
+
+  .clip {
+    height: 248px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .clip img {
+    width: 400px;
+    height: 223px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .rowDivider {
+    display: none;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 25px 5px;
+    width: 100%;
+    min-height: none;
+  }
+
+  #desc {
+    float: left;
+    width: 60%;
+    padding: 0;
+    display: block;
+    margin: 0 auto 25px auto;
+    border: none;
+  }
+
+  #logos {
+    float: right;
+    padding: 0 25px 25px 0;
+    width: 33%
+  }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media only screen and (min-width:641px) and (max-width:961px) {
+  /* Lone Star Emmy Banner */
+  #lonestarEmmyBannerImage {
+    display: none;
+    visibility: hidden;
+  }
+
+  #smallLonestarEmmyBannerImage {
+    display: block;
+    visibility: visible;
+    width: 100%;
+  }
+
+  /* Current Episode Video */
+  .intrinsic-container {
+    padding-bottom: 46%;
+    vertical-align: bottom;
+  }
+
+  /* Previous Episodes */
+  .showsRow:first-of-type {
+    width: 400px;
+    height: 496px;
+  }
+
+  .showsRow {
+    width: 400px;
+    height: 744px;
+  }
+
+  #clips {
+    height: 1242px;
+  }
+
+  #newestEpisodeDisappear {
+    display: none;
+  }
+
+  .clip {
+    height: 248px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .clip img {
+    width: 400px;
+    height: 223px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .rowDivider {
+    display: none;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 25px 5px;
+    width: 100%;
+    min-height: none;
+  }
+
+  #desc {
+    float: left;
+    width: 60%;
+    padding: 0;
+    display: block;
+    margin: 0 auto 25px auto;
+    border: none;
+  }
+
+  #logos {
+    float: right;
+    padding: 0 25px 25px 0;
+    width: 33%
+  }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media only screen and (min-width:481px) and (max-width: 641px) {
+  /* Lone Star Emmy Banner */
+  #lonestarEmmyBannerImage {
+    display: none;
+    visibility: hidden;
+  }
+
+  #smallLonestarEmmyBannerImage {
+    display: block;
+    visibility: visible;
+    width: 100%;
+  }
+
+  /* Show Title Banner */
+  #header img {
+    width: 100%;
+  }
+
+  /* Current Episode Video */
+  .intrinsic-container {
+    padding-bottom: 46%;
+    vertical-align: bottom;
+  }
+
+  /* Previous Episodes */
+  .showsRow:first-of-type {
+    width: 310px;
+    height: 466px;
+  }
+
+  .showsRow {
+    width: 310px;
+    height: 600px;
+  }
+
+  #clips {
+    height: 1164px;
+  }
+
+  #newestEpisodeDisappear {
+    display: none;
+  }
+
+  .clip {
+    height: 233px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .clip img {
+    width: 310px;
+    height: 173px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .rowDivider {
+    display: none;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 25px 5px;
+    width: 100%;
+    min-height: none;
+  }
+
+  #desc {
+    float: left;
+    width: 60%;
+    padding: 0;
+    display: block;
+    margin: 0 auto 25px auto;
+    border: none;
+  }
+
+  #logos {
+    float: right;
+    padding: 0 25px 25px 0;
+    width: 33%
+  }
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */ 
+@media only screen and (min-width:320px) and (max-width: 481px) {
+  /* Lone Star Emmy Banner */
+  #lonestarEmmyBannerImage {
+    display: none;
+    visibility: hidden;
+  }
+
+  #smallLonestarEmmyBannerImage {
+    display: block;
+    visibility: visible;
+    width: 100%;
+  }
+
+  /* Show Title Banner */
+  #header img {
+    width: 100%;
+  }
+
+  /* Current Episode Video */
+  .intrinsic-container {
+    padding-bottom: 46%;
+    vertical-align: bottom;
+  }
+
+  /* Previous Episodes */
+  .showsRow:first-of-type {
+    width: 250px;
+    height: 400px;
+  }
+
+  .showsRow {
+    width: 250px;
+    height: 600px;
+  }
+
+  #clips {
+    height: 1000px;
+  }
+
+  #newestEpisodeDisappear {
+    display: none;
+  }
+
+  .clip {
+    height: 200px;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .rowDivider {
+    display: none;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 25px 5px;
+    width: 100%;
+    min-height: none; 
+  }
+
+  #desc {
+    float: none;
+    padding: 0;
+    display: block;
+    margin: 0 auto 25px auto;
+    border: none;
+  }
+
+  #logos {
+    float: right;
+    padding: 0 25px 0 0;
+    width: 33%
+  }
+}
